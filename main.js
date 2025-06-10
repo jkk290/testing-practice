@@ -30,9 +30,25 @@ export const calculator = {
 
 export function caesarCipher(string, key) {
     const alpha = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z',]
-    let cipher = ''; 
-    for (let i = string.length -1; i >= 0; i--) {
-        
-    }
+    let cipher = '';   
 
+    function checkCurrentLetter(letter) {
+       return alpha.findIndex(char => char === letter);
+    };
+
+    for (let i = 0; i <= string.length - 1; i++) {
+        let letter = checkCurrentLetter(string[i].toLowerCase());
+
+        let cipheredLetter = '';
+
+        if (letter + key >= alpha.length) {
+            cipheredLetter = (letter + key) - alpha.length;
+        } else {
+            cipheredLetter = letter + key;
+        };
+
+        cipher += alpha[cipheredLetter];
+    };
+
+    return cipher;
 };
