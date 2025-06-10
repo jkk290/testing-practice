@@ -29,7 +29,10 @@ export const calculator = {
 
 
 export function caesarCipher(string, key) {
-    const alpha = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z',]
+    const alpha = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
+
+    const punctuation = [' ', '.', ',', ';', '!', '?'];
+
     let cipher = '';   
 
     function checkCurrentLetter(letter) {
@@ -46,7 +49,10 @@ export function caesarCipher(string, key) {
         let cipheredLetterIndex = undefined;
         let cipheredLetter = '';
 
-        if ((letter + key >= alpha.length) && isCapitalized(string[i])) {
+        if (punctuation.includes(string[i])) {
+            cipheredLetter = string[i];
+            
+        } else if ((letter + key >= alpha.length) && isCapitalized(string[i])) {
             cipheredLetterIndex = (letter + key) - alpha.length;
             cipheredLetter = alpha[cipheredLetterIndex].toUpperCase();
 
