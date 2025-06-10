@@ -26,3 +26,13 @@ export const calculator = {
         return num1 * num2;
     }
 };
+
+
+export function caesarCipher(string, key) {
+    const alpha = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z',]
+    let cipher = ''; 
+    for (let i = string.length -1; i >= 0; i--) {
+        
+    }
+
+};

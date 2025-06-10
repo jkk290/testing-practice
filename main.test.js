@@ -1,7 +1,8 @@
 import { 
     capitalize,
     reverseString,
-    calculator
+    calculator,
+    caesarCipher
 } from "./main.js";
 
 test('hello becomes Hello', () => {
@@ -28,5 +29,16 @@ test('calculator operations: 3 * 3 equals 9', () => {
     expect(calculator.multiply(3, 3)).toBe(9);
 });
 
+test('Caesar cipher xyz becomes abc', () => {
+    expect(caesarCipher('xyz', 3)).toBe('abc');
+});
+
+test('Caesar cipher HeLLo becomes KhOOr', () => {
+    expect(caesarCipher('HeLLo', 3)).toBe('KhOOr');
+});
+
+test('Caesar cipher Hello, World! becomes Khoor, Zruog', () => {
+    expect(caesarCipher('Hello, World!')).toBe('Khoor, Zruog!');
+});
 
 
