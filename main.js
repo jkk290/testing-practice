@@ -36,18 +36,33 @@ export function caesarCipher(string, key) {
        return alpha.findIndex(char => char === letter);
     };
 
+    function isCapitalized(letter) {
+        return letter === letter.toUpperCase();
+    };
+
     for (let i = 0; i <= string.length - 1; i++) {
         let letter = checkCurrentLetter(string[i].toLowerCase());
 
+        let cipheredLetterIndex = undefined;
         let cipheredLetter = '';
 
-        if (letter + key >= alpha.length) {
-            cipheredLetter = (letter + key) - alpha.length;
-        } else {
-            cipheredLetter = letter + key;
+        if ((letter + key >= alpha.length) && isCapitalized(string[i])) {
+            cipheredLetterIndex = (letter + key) - alpha.length;
+            cipheredLetter = alpha[cipheredLetterIndex].toUpperCase();
+
+        } else if ((letter + key < alpha.length) && isCapitalized(string[i])) {
+            cipheredLetterIndex = (letter + key);
+            cipheredLetter = alpha[cipheredLetterIndex].toUpperCase();
+
+        } else if ((letter + key >= alpha.length) && !isCapitalized(string[i])) {
+            cipheredLetterIndex = (letter + key) - alpha.length;
+            cipheredLetter = alpha[cipheredLetterIndex]
+        } else {            
+            cipheredLetterIndex = (letter + key);
+            cipheredLetter = alpha[cipheredLetterIndex]
         };
 
-        cipher += alpha[cipheredLetter];
+        cipher += cipheredLetter;
     };
 
     return cipher;

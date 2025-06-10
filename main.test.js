@@ -38,7 +38,7 @@ test('Caesar cipher HeLLo becomes KhOOr', () => {
 });
 
 test('Caesar cipher Hello, World! becomes Khoor, Zruog', () => {
-    expect(caesarCipher('Hello, World!')).toBe('Khoor, Zruog!');
+    expect(caesarCipher('Hello, World!', 3)).toBe('Khoor, Zruog!');
 });
 
 
