@@ -100,9 +100,24 @@ export function analyzeArray(array) {
         return minNum;
     };
 
+    function max() {
+        let maxNum = array[0];
+
+        array.forEach((number) => {
+            if (number >= maxNum) {
+                maxNum = number;
+            } else {
+                return;
+            }
+        });
+
+        return maxNum;
+    };
+
     let analyzedObject = {
         average: average(),
-        min: min()
+        min: min(),
+        max: max()
     }
 
     return analyzedObject;

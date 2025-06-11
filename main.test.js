@@ -50,3 +50,7 @@ test('Object min is 1', () => {
     expect(analyzeArray([1,8,3,4,2,6]).min).toBe(1);
 });
 
+test('Object max is 8', () => {
+    expect(analyzeArray([1,8,3,4,2,6]).max).toBe(8);
+});
+
