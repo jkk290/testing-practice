@@ -77,18 +77,32 @@ export function caesarCipher(string, key) {
 export function analyzeArray(array) {
 
     function average() {
-        let arrayAverage = array;
         let sum = 0;
 
-        arrayAverage.forEach((number) => {
+        array.forEach((number) => {
             sum += number;
         })
 
-        return average = sum / arrayAverage.length;
-    }
+        return average = sum / array.length;
+    };
+
+    function min() {
+        let minNum = array[0];
+
+        array.forEach((number) => {
+            if (number <= minNum) {
+                minNum = number;
+            } else {
+                return;
+            }
+        });
+
+        return minNum;
+    };
 
     let analyzedObject = {
-        average: average()
+        average: average(),
+        min: min()
     }
 
     return analyzedObject;
