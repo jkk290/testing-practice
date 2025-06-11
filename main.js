@@ -114,10 +114,15 @@ export function analyzeArray(array) {
         return maxNum;
     };
 
+    function length() {
+        return array.length;
+    }
+
     let analyzedObject = {
         average: average(),
         min: min(),
-        max: max()
+        max: max(),
+        length: length()
     }
 
     return analyzedObject;

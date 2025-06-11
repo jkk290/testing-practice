@@ -54,3 +54,7 @@ test('Object max is 8', () => {
     expect(analyzeArray([1,8,3,4,2,6]).max).toBe(8);
 });
 
+test('Object length is 6', () => {
+    expect(analyzeArray([1,8,3,4,2,6]).length).toBe(6);
+});
+
