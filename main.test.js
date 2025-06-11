@@ -2,7 +2,8 @@ import {
     capitalize,
     reverseString,
     calculator,
-    caesarCipher
+    caesarCipher,
+    analyzeArray
 } from "./main.js";
 
 test('hello becomes Hello', () => {
@@ -41,4 +42,7 @@ test('Caesar cipher Hello, World! becomes Khoor, Zruog', () => {
     expect(caesarCipher('Hello, World!', 3)).toBe('Khoor, Zruog!');
 });
 
+test('Object average is 4', () => {
+    expect(analyzeArray([1,8,3,4,2,6]).average).toBe(4);
+});
 

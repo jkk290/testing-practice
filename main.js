@@ -51,7 +51,7 @@ export function caesarCipher(string, key) {
 
         if (punctuation.includes(string[i])) {
             cipheredLetter = string[i];
-            
+
         } else if ((letter + key >= alpha.length) && isCapitalized(string[i])) {
             cipheredLetterIndex = (letter + key) - alpha.length;
             cipheredLetter = alpha[cipheredLetterIndex].toUpperCase();
@@ -72,4 +72,24 @@ export function caesarCipher(string, key) {
     };
 
     return cipher;
+};
+
+export function analyzeArray(array) {
+
+    function average() {
+        let arrayAverage = array;
+        let sum = 0;
+
+        arrayAverage.forEach((number) => {
+            sum += number;
+        })
+
+        return average = sum / arrayAverage.length;
+    }
+
+    let analyzedObject = {
+        average: average()
+    }
+
+    return analyzedObject;
 };
